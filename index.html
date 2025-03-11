@@ -3,9 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Budget Tracker</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
+    <div class="container">
+        <h1>Budget Tracker</h1>
+        <div class="form-group">
+            <input type="text" id="description" placeholder="Description">
+            <input type="number" id="amount" placeholder="Amount">
+            <select id="type">
+                <option value="income">Income</option>
+                <option value="expense">Expense</option>
+            </select>
+            <button onclick="addTransaction()">Add</button>
+        </div>
+        <h2>Balance: $<span id="balance">0</span></h2>
+        <ul id="transactions"></ul>
+    </div>
+    <script>
+        let balance = 0;
+        function addTransaction() {
+            const description = document.getElementById('description').value;
+            const amount = parseFloat(document.getElementById('amount').value);
+            const type = document.getElementById('type').value;
+            if (!description || isNaN(amount)) {
+                alert('Please enter valid details');
+                return;
+            }
+            const transactionList = document.getElementById('transactions');
+            const listItem = document.createElement('li');
+            listItem.textContent = `${description}: $${amount} (${type})`;
+            transactionList.appendChild(listItem);
+            balance += type === 'income' ? amount : -amount;
+            document.getElementById('balance').textContent = balance.toFixed(2);
+            document.getElementById('description').value = '';
+            document.getElementById('amount').value = '';
+        }
+    </script>
 </body>
 </html>
