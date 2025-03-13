@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #faace4;
-    color: #333;
+    color: #4a154b; /* Deep purple for better contrast */
     text-align: center;
     margin: 0;
     padding: 0;
@@ -10,7 +10,7 @@ body {
 .container {
     width: 50%;
     margin: 50px auto;
-    background: white;
+    background: #ffffff;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -24,17 +24,20 @@ input, select, button {
     margin: 5px;
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid #d48ac0; /* Soft pink border */
+    background-color: #fbe0f3; /* Light pink background */
+    color: #4a154b;
 }
 
 button {
-    background-color: #00796b;
+    background-color: #d81b60; /* Vibrant pink */
     color: white;
     cursor: pointer;
+    border: none;
 }
 
 button:hover {
-    background-color: #004d40;
+    background-color: #b71550; /* Darker pink for hover */
 }
 
 ul {
@@ -43,9 +46,9 @@ ul {
 }
 
 li {
-    background: #b2dfdb;
+    background: #f8bbd0; /* Soft pink background */
     margin: 5px;
     padding: 10px;
     border-radius: 5px;
+    color: #4a154b;
 }
-
