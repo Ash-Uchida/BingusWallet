@@ -1,8 +1,19 @@
+/* general */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+body {
+    max-width: 1400px;
+    margin: auto;
+    font-family: Arial, sans-serif;
+    background-color: #faace4;
+    color: #4a154b; 
+    text-align: center;
+}
+
+/* HOME PAGE START */
 header {
     background-color: white;
     padding-top: 12px;
@@ -12,6 +23,8 @@ header {
     background-color: #999;
     height: 88px; width: 88px;
 }
+
+/* NAVIGATION */
 nav {
     margin-top: 12px;
     background-color: #ffdcf5;
@@ -32,15 +45,6 @@ nav a:hover {
 .highlight {
     background-color: #d81b60;
     color: white;
-}
-
-body {
-    max-width: 1400px;
-    margin: auto;
-    font-family: Arial, sans-serif;
-    background-color: #faace4;
-    color: #4a154b; 
-    text-align: center;
 }
 
 .container {
@@ -87,4 +91,48 @@ li {
     padding: 10px;
     border-radius: 5px;
     color: #4a154b;
+}
+
+/* TIPS AND TRICKS PAGE */
+.tips-container {
+    max-width: 500px;
+    margin: 50px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+.accordion {
+    background-color: #b71550;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+.accordion:hover {
+    background-color: #f43b7f;
+}
+.panel {
+    display: none;
+    background-color: white;
+    padding: 10px;
+    text-align: left;
+}
+.panel a {
+    display: block;
+    text-decoration: none;
+    margin: 5px 0;
+    color: #007bff;
+    transition: color .9s ease;
+}
+.panel a:hover {
+    color: #b71550;
+    transition: color .4s ease;
+
 }
