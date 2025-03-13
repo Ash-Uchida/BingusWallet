@@ -1,9 +1,11 @@
-/* general */
+/* home page */
+/* counter default browser values */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+/* generals */
 body {
     max-width: 1400px;
     margin: auto;
@@ -13,39 +15,74 @@ body {
     text-align: center;
 }
 
-/* HOME PAGE START */
+/* header */
 header {
-    background-color: white;
-    padding-top: 12px;
-}
-.logo {
-    display: block; margin: auto;
-    background-color: #999;
-    height: 88px; width: 88px;
+    /* background-color: green; */
+
 }
 
-/* NAVIGATION */
+/* navigation */
 nav {
-    margin-top: 12px;
-    background-color: #ffdcf5;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; 
+    font-weight: bold;
+    background-color: #fff;
+}
+.links {
     display: flex;
+    color: #4a154b; 
+    text-decoration: none;
     justify-content: center;
-
+    
 }
 nav a {
     color: #4a154b; 
     text-decoration: none;
-    padding: 12px;
+    padding: 16px;
 }
 nav a:hover {
+    transition: background-color .8s ease;
     background-color: #d81b60;
     color: white;
     
 }
+.logo {
+    display: block; margin: auto;
+    background-color: #999;
+    border-radius: 50%;
+    height:264px;
+}
+.nav-logo {
+    align-self: center;
+    margin-left: 4px;
+    height: 44px;
+    border-radius: 50%;
+    
+}
+
+/* highlight the page you're on in the navbar */
 .highlight {
     background-color: #d81b60;
     color: white;
 }
+.front-page {
+    background-color: #FBDCD9;
+    /* height: 400px; */
+    width: 100%;
+    padding: 32px;
+    
+}
+
+.front-page h1 {
+    font-size: 3em;
+    margin-bottom: 12px;
+}
+.front-page h2 {
+    font-size:1.5em;
+    margin-bottom: 12px;
+}
+
+
 
 .container {
     width: 50%;
@@ -93,7 +130,26 @@ li {
     color: #4a154b;
 }
 
+footer {
+    margin-top: 100px;
+    padding: 16px;
+    /* color: black; */
+    background-color: white;
+
+    height: 30vh;
+}
+
 /* TIPS AND TRICKS PAGE */
+.tips-page {
+    background-color: #FBDCD9;
+    /* height: 400px; */
+    width: 100%;
+    padding: 32px;
+    
+}
+.tips-page h2 {
+    font-size: 1.5m;
+}
 .tips-container {
     max-width: 500px;
     margin: 50px auto;
@@ -136,3 +192,5 @@ li {
     transition: color .4s ease;
 
 }
+
+
