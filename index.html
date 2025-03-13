@@ -9,6 +9,17 @@
 <body>
     <div class="container">
         <h1>Budget Tracker</h1>
+
+        <!-- Monthly Budget Input -->
+        <div class="form-group">
+            <input type="number" id="monthlyBudget" placeholder="Enter Monthly Budget">
+            <button onclick="setBudget()">Set Budget</button>
+        </div>
+
+        <!-- Display Weekly Budget -->
+        <h2>Weekly Budget: $<span id="weeklyBudget">0</span></h2>
+
+        <!-- Transaction Input -->
         <div class="form-group">
             <input type="text" id="description" placeholder="Description">
             <input type="number" id="amount" placeholder="Amount">
@@ -18,28 +29,10 @@
             </select>
             <button onclick="addTransaction()">Add</button>
         </div>
+
         <h2>Balance: $<span id="balance">0</span></h2>
         <ul id="transactions"></ul>
     </div>
-    <script>
-        let balance = 0;
-        function addTransaction() {
-            const description = document.getElementById('description').value;
-            const amount = parseFloat(document.getElementById('amount').value);
-            const type = document.getElementById('type').value;
-            if (!description || isNaN(amount)) {
-                alert('Please enter valid details');
-                return;
-            }
-            const transactionList = document.getElementById('transactions');
-            const listItem = document.createElement('li');
-            listItem.textContent = `${description}: $${amount} (${type})`;
-            transactionList.appendChild(listItem);
-            balance += type === 'income' ? amount : -amount;
-            document.getElementById('balance').textContent = balance.toFixed(2);
-            document.getElementById('description').value = '';
-            document.getElementById('amount').value = '';
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
