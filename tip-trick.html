@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Money-Saving Resources</title>
+</head>
+<body>
+    <header>
+        <img src="Bingus Logo.jpeg" alt="" class="logo">
+        <nav>
+            <a href="index.html">Home</a>
+            <a class="highlight" href="tip-trick.html">Tips and Tricks</a>
+        </nav>
+    </header>
+
+    <div class="tips-container">
+        <h2>Money-Saving & Extra Cash Resources</h2>
+
+        <button class="accordion">💰 Cheap Date Ideas</button>
+        <div class="panel">
+            <a href="#">🎥 Free Movie Nights</a>
+            <a href="#">🌲 Outdoor Adventures</a>
+            <a href="#">🍕 DIY Pizza Night</a>
+        </div>
+
+        <button class="accordion">💵 Extra Cash Opportunities</button>
+        <div class="panel">
+            <a href="#">🩸 Donate Plasma for Cash</a>
+            <a href="#">📝 Paid Online Surveys</a>
+            <a href="#">📦 Gig Work & Side Hustles</a>
+        </div>
+
+        <button class="accordion">📈 Money-Saving & Investing</button>
+        <div class="panel">
+            <a href="#">📊 Best Budgeting Apps</a>
+            <a href="#">📉 How to Start Investing</a>
+            <a href="#">💳 Credit Card Cashback Tips</a>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to toggle accordion sections
+        const accordions = document.querySelectorAll(".accordion");
+        
+        accordions.forEach(button => {
+            button.addEventListener("click", function() {
+                this.classList.toggle("active");
+                let panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
