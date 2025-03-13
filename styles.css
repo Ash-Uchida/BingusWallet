@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #faace4;
-    color: #4a154b; /* Deep purple for better contrast */
+    color: #4a154b; 
     text-align: center;
     margin: 0;
     padding: 0;
@@ -24,20 +24,20 @@ input, select, button {
     margin: 5px;
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid #d48ac0; /* Soft pink border */
-    background-color: #fbe0f3; /* Light pink background */
+    border: 1px solid #d48ac0;
+    background-color: #fbe0f3;
     color: #4a154b;
 }
 
 button {
-    background-color: #d81b60; /* Vibrant pink */
+    background-color: #d81b60;
     color: white;
     cursor: pointer;
     border: none;
 }
 
 button:hover {
-    background-color: #b71550; /* Darker pink for hover */
+    background-color: #b71550;
 }
 
 ul {
@@ -46,7 +46,7 @@ ul {
 }
 
 li {
-    background: #f8bbd0; /* Soft pink background */
+    background: #f8bbd0;
     margin: 5px;
     padding: 10px;
     border-radius: 5px;
