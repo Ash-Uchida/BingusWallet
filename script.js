@@ -35,3 +35,42 @@ function addTransaction() {
     document.getElementById('description').value = '';
     document.getElementById('amount').value = '';
 }
+
+// Loan Payment (PMT) Calculator
+function calculatePMT() {
+    const loanAmount = parseFloat(document.getElementById('loanAmount').value);
+    const annualRate = parseFloat(document.getElementById('loanRate').value) / 100;
+    const loanTerm = parseFloat(document.getElementById('loanTerm').value);
+
+    if (!loanAmount || !annualRate || !loanTerm || loanAmount <= 0 || loanTerm <= 0) {
+        alert("Please enter valid loan details.");
+        return;
+    }
+
+    const monthlyRate = annualRate / 12;
+    const pmt = (loanAmount * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -loanTerm));
+    
+    document.getElementById('pmtResult').textContent = pmt.toFixed(2);
+}
+
+// Future Value (FV) Calculator for Savings
+function calculateFV() {
+    const savingsInitial = parseFloat(document.getElementById('savingsInitial').value);
+    const savingsMonthly = parseFloat(document.getElementById('savingsMonthly').value);
+    const annualRate = parseFloat(document.getElementById('savingsRate').value) / 100;
+    const savingsTerm = parseFloat(document.getElementById('savingsTerm').value);
+
+    if (!savingsInitial || !savingsMonthly || !annualRate || !savingsTerm || savingsInitial < 0 || savingsMonthly < 0 || savingsTerm <= 0) {
+        alert("Please enter valid savings details.");
+        return;
+    }
+
+    const monthlyRate = annualRate / 12;
+    let futureValue = savingsInitial * Math.pow(1 + monthlyRate, savingsTerm);
+
+    for (let i = 1; i <= savingsTerm; i++) {
+        futureValue += savingsMonthly * Math.pow(1 + monthlyRate, savingsTerm - i);
+    }
+
+    document.getElementById('fvResult').textContent = futureValue.toFixed(2);
+}
