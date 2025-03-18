@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Budget Tracker | Bingus Wallet</title>
+    <title>Budget & Finance Tracker | Bingus Wallet</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <nav>
-            <img src="Bingus Logo.jpeg" alt="" class="nav-logo">
+            <img src="Bingus Logo.jpeg" alt="Bingus Logo" class="nav-logo">
             <div class="links">
                 <a class="highlight" href="index.html">Home</a>
                 <a href="tip-trick.html">Tips and Tricks</a>  
@@ -20,20 +20,17 @@
     <div class="front-page">
         <h1>Welcome to Bingus Wallet!</h1>
         <h2>Where saving money is our specialty.</h2>
-        <img src="Bingus Logo.jpeg" alt="" class="logo">
+        <img src="Bingus Logo.jpeg" alt="Bingus Logo" class="logo">
     </div>
     
-    
     <div class="container">
-        <h1>Budget Tracker</h1>
+        <h1>Budget & Finance Tracker</h1>
 
         <!-- Monthly Budget Input -->
         <div class="form-group">
             <input type="number" id="monthlyBudget" placeholder="Enter Monthly Budget">
             <button onclick="setBudget()">Set Budget</button>
         </div>
-
-        <!-- Display Weekly Budget -->
         <h2>Weekly Budget: $<span id="weeklyBudget">0</span></h2>
 
         <!-- Transaction Input -->
@@ -46,14 +43,35 @@
             </select>
             <button onclick="addTransaction()">Add</button>
         </div>
-
         <h2>Balance: $<span id="balance">0</span></h2>
         <ul id="transactions"></ul>
+
+        <!-- Loan Payment (PMT) Calculator -->
+        <h2>Loan Payment Calculator (PMT)</h2>
+        <div class="form-group">
+            <input type="number" id="loanAmount" placeholder="Loan Amount">
+            <input type="number" id="loanRate" placeholder="Annual Interest Rate (%)">
+            <input type="number" id="loanTerm" placeholder="Term (Months)">
+            <button onclick="calculatePMT()">Calculate PMT</button>
+        </div>
+        <h3>Monthly Payment: $<span id="pmtResult">0</span></h3>
+
+        <!-- Future Value (FV) Calculator -->
+        <h2>Future Value Calculator (FV)</h2>
+        <div class="form-group">
+            <input type="number" id="savingsInitial" placeholder="Initial Savings ($)">
+            <input type="number" id="savingsMonthly" placeholder="Monthly Deposit ($)">
+            <input type="number" id="savingsRate" placeholder="Annual Interest Rate (%)">
+            <input type="number" id="savingsTerm" placeholder="Term (Months)">
+            <button onclick="calculateFV()">Calculate FV</button>
+        </div>
+        <h3>Future Value: $<span id="fvResult">0</span></h3>
     </div>
+    
     <script src="script.js"></script>
+    
     <footer>
         Copyright 2025 Bingus Wallet
-
         <div class="social">
             <img src="" alt="">
             <img src="" alt="">
