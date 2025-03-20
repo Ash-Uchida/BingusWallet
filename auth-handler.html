@@ -1,15 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Processing Authentication...</title>
+<!-- auth-handler.html -->
+<html>
+  <head>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+  </head>
+  <body>
+    <button onclick="signInWithGoogle()">Sign In with Google</button>
+    
     <script>
-        console.log("GitHub OAuth redirect received.");
-        // In the future, Firebase will process the OAuth response here
+      const firebaseConfig = {
+        apiKey: "AIzaSyCEuZH9Ctva_A2XsZjbhyy2We8XwIpabo8",
+      authDomain: "bingus-wallet.firebaseapp.com",
+      projectId: "bingus-wallet",
+      storageBucket: "bingus-wallet.firebasestorage.app",
+      messagingSenderId: "183867183994",
+      appId: "1:183867183994:web:ce75da09e4cd0195d17cc3",
+      measurementId: "G-GTL7RDRW4T",
+      };
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
+      const app = firebase.initializeApp(firebaseConfig);
+      const auth = firebase.auth();
+      const provider = new firebase.auth.GoogleAuthProvider();
+
+      function signInWithGoogle() {
+        firebase.auth().signInWithPopup(provider)
+          .then((result) => {
+            const user = result.user;
+            console.log("User logged in:", user);
+            window.location.href = "/index.html"; // Redirect to main page after login
+          })
+          .catch((error) => {
+            console.error("Error during login:", error);
+          });
+      }
     </script>
-</head>
-<body>
-    <h2>Processing authentication...</h2>
-</body>
+  </body>
 </html>
