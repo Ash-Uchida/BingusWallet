@@ -5,10 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Budget & Finance Tracker | Bingus Wallet</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
-    <script>
+
+    <script type="module" defer>
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.5.0/firebase-app.js'
+    
+        // If you enabled Analytics in your project, add the Firebase SDK for Google Analytics
+        import { getAnalytics } from 'https://www.gstatic.com/firebasejs/11.5.0/firebase-analytics.js'
+
+        // Add Firebase products that you want to use
+        import { GoogleAuthProvider, getAuth, signInWithPopup } from 'https://www.gstatic.com/firebasejs/11.5.0/firebase-auth.js'
+        import { getFirestore } from 'https://www.gstatic.com/firebasejs/11.5.0/firebase-firestore.js'
+
         const firebaseConfig = {
             apiKey: "AIzaSyCEuZH9Ctva_A2XsZjbhyy2We8XwIpabo8",
             authDomain: "bingus-wallet.firebaseapp.com",
@@ -19,12 +26,12 @@
             measurementId: "G-GTL7RDRW4T"
         };
         
-        const app = firebase.initializeApp(firebaseConfig);
-        const auth = firebase.auth();
-        const provider = new firebase.auth.GoogleAuthProvider();
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth();
+        const provider = new GoogleAuthProvider();
 
         function signInWithGoogle() {
-            firebase.auth().signInWithPopup(provider)
+            signInWithPopup( auth, provider)
                 .then((result) => {
                     const user = result.user;
                     console.log("User logged in:", user);
@@ -42,7 +49,10 @@
                 console.error("Error during sign out:", error);
             });
         }
+        document.getElementById("signIn").addEventListener("click", signInWithGoogle);
+        document.getElementById("signOut").addEventListener("click", signOut);
     </script>
+    
 </head>
 <body>
     <header>
@@ -51,8 +61,8 @@
             <div class="links">
                 <a class="highlight" href="index.html">Home</a>
                 <a href="tip-trick.html">Tips and Tricks</a>
-                <button onclick="signInWithGoogle()">Sign In</button>
-                <button onclick="signOut()">Sign Out</button>
+                <button id="signIn">Sign In</button>
+                <button id="signOut">Sign Out</button>
                 <span id="auth-status">Not logged in</span>
             </div>    
         </nav>
