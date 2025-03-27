@@ -5,7 +5,8 @@
 let balance = 0;
 let monthlyBudget = 0;
 
-function setBudget() {
+function setBudget()
+{
     const budgetInput = document.getElementById('monthlyBudget').value;
     if (!budgetInput || isNaN(budgetInput) || budgetInput <= 0) {
         alert("Please enter a valid monthly budget.");
