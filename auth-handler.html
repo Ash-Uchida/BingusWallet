@@ -4,33 +4,6 @@
     <title>Auth Handler</title>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
-    <script type="module">
-        const firebaseConfig = {
-            apiKey: "AIzaSyCEuZH9Ctva_A2XsZjbhyy2We8XwIpabo8",
-            authDomain: "bingus-wallet.firebaseapp.com",
-            projectId: "bingus-wallet",
-            storageBucket: "bingus-wallet.firebasestorage.app",
-            messagingSenderId: "183867183994",
-            appId: "1:183867183994:web:ce75da09e4cd0195d17cc3",
-            measurementId: "G-GTL7RDRW4T"
-        };
-        const app = firebase.initializeApp(firebaseConfig);
-        const auth = firebase.auth();
-        const provider = new firebase.auth.GoogleAuthProvider();
-
-        function signInWithGoogle() {
-            auth.signInWithPopup(provider)
-                .then((result) => {
-                    console.log("User logged in:", result.user);
-                    window.location.href = "index.html"; // Redirect to home
-                })
-                .catch((error) => {
-                    console.error("Error during login:", error);
-                });
-        }
-
-        window.signInWithGoogle = signInWithGoogle;
-    </script>
 </head>
 <body>
     <button onclick="signInWithGoogle()">Sign In with Google</button>
