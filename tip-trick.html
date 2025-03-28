@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/binguswallet.css">
     <link rel="icon" href="Bingus-logo-cropped.jpeg">
-    <script src="scripts/script.js"></script>
     <title>Money-Saving Resources | Bingus Wallet</title>
 </head>
 <body>
@@ -38,9 +37,9 @@
 
         <button class="accordion">💵 Extra Cash Opportunities</button>
         <div class="panel">
-            <a href="#">🩸 Donate Plasma for Cash</a>
-            <a href="#">📝 Paid Online Surveys</a>
-            <a href="#">📦 Gig Work & Side Hustles</a>
+            <a href="https://www.grifolsplasma.com/en/-/rexburg-id">🩸 Donate Plasma for Cash</a>
+            <a href="https://www.swagbucks.com/">📝 Paid Online Surveys</a>
+            <a href="https://www.fiverr.com/">📦 Gig Work & Side Hustles</a>
         </div>
 
         <button class="accordion">📈 Money-Saving & Investing</button>
@@ -50,6 +49,22 @@
             <a href="https://www.nerdwallet.com/article/credit-cards/make-most-rewards-credit-cards">💳 Credit Card Cashback Tips</a>
         </div>
     </div>
+    <script>
+        // JavaScript to toggle accordion sections
+        const accordions = document.querySelectorAll(".accordion");
+        
+        accordions.forEach(button => {
+            button.addEventListener("click", function() {
+                this.classList.toggle("active");
+                let panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        });
+    </script>
     <footer>
         Copyright 2025 Bingus Wallet
 
