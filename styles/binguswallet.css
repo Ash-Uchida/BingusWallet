@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+
 /* General Styles */
 * {
     margin: 0;
@@ -8,76 +13,106 @@
 body {
     max-width: 1400px;
     margin: auto;
-    font-family: Arial, sans-serif;
-    background-color: #faace4;
-    color: #4a154b;
+    font-family: "Sour Gummy", sans-serif;
+    
+    /* background-color:#BD02F8; */
+    background-color: #6E0037;
+
+    /* color: #4a154b; */
+    color: black;
     text-align: center;
 }
-
-/* Header
-header {
-    /* background-color: green; 
-} */
 
 /* Navigation */
 nav {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 2fr;
     font-weight: bold;
     background-color: #fff;
-}
-
-.links {
+  }
+  
+  /* Links container */
+  .links {
     display: flex;
-    color: #4a154b;
-    text-decoration: none;
     justify-content: center;
-}
-
-nav a {
-    color: #4a154b;
+    align-items: center;
+    height: 48px; /* Adjust the height of the navbar */
+  }
+  
+  /* Make links cover full height */
+  nav a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
     text-decoration: none;
-    padding: 16px;
-}
-
-nav a:hover {
-    transition: background-color .8s ease;
-    background-color: #d81b60;
-    color: white;
-}
-
-.nav-logo {
+    height: 100%; /* Ensure it covers the full height */
+    width: 100%; /* Stretch to fill the grid space */
+  }
+  
+  /* Hover effect */
+  nav a:hover {
+    transition: background-color 0.4s ease;
+    background-color: #ddd;
+  }
+  
+  /* Logo styling */
+  .nav-logo {
     align-self: center;
-    margin-left: 4px;
-    height: 44px;
+    margin-left: 16px;
+    height: 40px;
     border-radius: 50%;
-}
+  }
+  
 .logo {
     display: block;
     margin: auto;
-    background-color: #999;
-    border-radius: 50%;
     height: 264px;
 }
 
 /* Highlight active page in navbar */
 .highlight {
-    background-color: #d81b60;
+    background-color: #ddd;
+}
+
+
+input, select, button {
+    margin: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #d48ac0;
+    background-color: #fbe0f3;
+    
+}
+
+button {
+    background-color: black;
     color: white;
+    cursor: pointer;
+    border: none;
+}
+button:hover {
+    /* background-color: black; */
+    background-color: #E8157E;
+    /* color: white; */
+    color: black;
 }
 
 /* Front Page */
 .front-page, .tips-page {
-    background-color: #FBDCD9;
     width: 100%;
     padding: 32px;
 }
-.front-page h1 {
+.front-page h1, .tips-page h1 {
+    color: white;
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
     font-size: 3em;
     margin-bottom: 12px;
 }
 
 .front-page h2, .tips-page h2 {
+    color: white;
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
     font-size: 1.5em;
     margin-bottom: 12px;
 }
@@ -96,25 +131,6 @@ nav a:hover {
     margin-bottom: 15px;
 }
 
-input, select, button {
-    margin: 5px;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #d48ac0;
-    background-color: #fbe0f3;
-    color: #4a154b;
-}
-
-button {
-    background-color: #d81b60;
-    color: white;
-    cursor: pointer;
-    border: none;
-}
-
-button:hover {
-    background-color: #b71550;
-}
 
 ul {
     list-style: none;
