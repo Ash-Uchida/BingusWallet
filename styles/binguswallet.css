@@ -1,9 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
-
-
-
-
 /* General Styles */
+@import url('https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -145,13 +141,6 @@ li {
     color: #4a154b;
 }
 
-/* Footer */
-footer {
-    margin-top: 100px;
-    padding: 16px;
-    background-color: white;
-    height: 30vh;
-}
 
 /* Accordion for Tips and Tricks */
 .accordion {
@@ -190,4 +179,25 @@ footer {
 .panel a:hover {
     color: #b71550;
     transition: color .4s ease;
+}
+
+/* Footer */
+footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 100px;
+    padding: 16px;
+    background-color: white;
+    height: 30vh;
+}
+
+footer a {
+    text-decoration: none;
+}
+footer p {
+    grid-column: 2/3;
+}
+.social {
+    text-align: right;
+    
 }
