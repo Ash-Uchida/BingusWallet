@@ -55,7 +55,6 @@ nav {
   /* Logo styling */
   .nav-logo {
     align-self: center;
-    margin-left: 16px;
     height: 40px;
     border-radius: 50%;
   }
@@ -94,6 +93,10 @@ button:hover {
     color: black;
 }
 
+.login-status {
+    text-align: right;
+}
+
 /* Front Page */
 .front-page, .tips-page {
     width: 100%;
@@ -115,7 +118,7 @@ button:hover {
 
 /* Containers */
 .container, .tips-container {
-    width: 50%;
+    width: 700px;
     margin: 50px auto;
     background: #ffffff;
     padding: 20px;
@@ -199,5 +202,21 @@ footer p {
 }
 .social {
     text-align: right;
+    
+}
+
+
+@media (max-width:700px) {
+    nav {
+        grid-template-columns: auto 1fr auto;
+    }
+    .container {
+        width: 100%;
+        border-radius: 0;
+    }
+    .tips-container {
+        width: 100%;
+        border-radius:0;
+    }
     
 }
