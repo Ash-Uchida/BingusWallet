@@ -5,8 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/binguswallet.css">
     <link rel="icon" href="images/Bingus-logo-cropped.jpeg">
-    <script src="scripts/script.js"></script>
+<!--     <script src="scripts/script.js"></script> -->
     <title>Budget & Finance Tracker | Bingus Wallet</title>
+    
+    <script type="module" defer>
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.5.0/firebase-app.js'
+    
+        // If you enabled Analytics in your project, add the Firebase SDK for Google Analytics
+        import { getAnalytics } from 'https://www.gstatic.com/firebasejs/11.5.0/firebase-analytics.js'
+
+        // Add Firebase products that you want to use
+        import { GoogleAuthProvider, getAuth, signInWithPopup } from 'https://www.gstatic.com/firebasejs/11.5.0/firebase-auth.js'
+        import { getFirestore } from 'https://www.gstatic.com/firebasejs/11.5.0/firebase-firestore.js'
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyCEuZH9Ctva_A2XsZjbhyy2We8XwIpabo8",
+            authDomain: "bingus-wallet.firebaseapp.com",
+            projectId: "bingus-wallet",
+            storageBucket: "bingus-wallet.firebasestorage.app",
+            messagingSenderId: "183867183994",
+            appId: "1:183867183994:web:ce75da09e4cd0195d17cc3",
+            measurementId: "G-GTL7RDRW4T"
+        };
+        
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth();
+        const provider = new GoogleAuthProvider();
+
+        function signInWithGoogle() {
+            signInWithPopup( auth, provider)
+                .then((result) => {
+                    const user = result.user;
+                    console.log("User logged in:", user);
+                    document.getElementById("auth-status").innerText = `Logged in as: ${user.displayName}`;
+                })
+                .catch((error) => {
+                    console.error("Error during login:", error);
+                });
+        }
+
+        function signOut() {
+            auth.signOut().then(() => {
+                document.getElementById("auth-status").innerText = "Not logged in";
+            }).catch((error) => {
+                console.error("Error during sign out:", error);
+            });
+        }
+        document.getElementById("signIn").addEventListener("click", signInWithGoogle);
+        document.getElementById("signOut").addEventListener("click", signOut);
+    </script>
 </head>
 <body>
     <header>
